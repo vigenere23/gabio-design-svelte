@@ -1,5 +1,6 @@
 import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
+import sizes from 'rollup-plugin-sizes'
 import pkg from './package.json'
 import autoPreprocess from 'svelte-preprocess'
 import typescript from '@rollup/plugin-typescript'
@@ -20,6 +21,7 @@ export default {
   plugins: [
     svelte({ preprocess: autoPreprocess() }),
     typescript({ sourceMap: !production }),
-    resolve()
+    resolve(),
+    sizes()
   ]
 }
