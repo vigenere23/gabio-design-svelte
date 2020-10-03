@@ -19,7 +19,9 @@ export default {
     { file: pkg.main, format: 'umd', name }
   ],
   plugins: [
-    svelte({ preprocess: autoPreprocess() }),
+    svelte({
+      preprocess: autoPreprocess()
+    }),
     typescript({ sourceMap: !production }),
     resolve(),
     sizes()

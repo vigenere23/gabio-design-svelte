@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'fonts';
+
+html {
+  background-color: light(1);
+}
+
+body {
+  margin: 0;
+  font-family: $classic-font;
+  font-weight: 500;
+  color: $primary-text-dark;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  * {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

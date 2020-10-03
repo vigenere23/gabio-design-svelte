@@ -1,0 +1,47 @@
+$base-transition: (
+  'in-function': ease-in-out,
+  'in-time': 0.15s,
+  'out-function': ease-in-out,
+  'out-time': 0.2s
+);
+
+$transitions: (
+  'base': $base-transition
+);
+
+$types: 'in', 'out';
+
+@mixin transition($name, $type, $properties...) {
+  @if index($list: $types, $value: $type) == null {
+    @error "Property #{$type} must be one of #{$types}";
+  }
+
+  @if index($list: map-keys($map: $transitions), $value: $name) == null {
+    @error "Property #{$name} must be one of #{map-keys($map: $transitions)}";
+  }
+
+  $transition-infos: map-get(
+    $map: $transitions,
+    $key: $name
+  );
+  $transition-function: map-get(
+    $map: $transition-infos,
+    $key: '#{$type}-function'
+  );
+  $transition-time: map-get(
+    $map: $transition-infos,
+    $key: '#{$type}-time'
+  );
+  $transition: $transition-function $transition-time;
+  $transition-values: ();
+
+  @each $property in $properties {
+    $transition-values: append(
+      $list: $transition-values,
+      $val: $property $transition,
+      $separator: comma
+    );
+  }
+
+  transition: $transition-values;
+}

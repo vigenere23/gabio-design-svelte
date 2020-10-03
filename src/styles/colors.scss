@@ -1,0 +1,33 @@
+$__base-hue: 220;
+$__base_saturation: 15%;
+$__base-dark: hsl($__base-hue, $__base_saturation, 18%);
+$__base-light: hsl($__base-hue, $__base_saturation, 98%);
+$__brightness-change: 5%;
+
+@function dark($level) {
+  @return lighten($__base-dark, $__brightness-change * ($level - 1));
+}
+
+@function light($level) {
+  @return darken($__base-light, $__brightness-change * ($level - 1));
+}
+
+// DARK
+$background-dark: dark(1);
+$accent-dark: dark(2);
+$focus-dark: dark(3);
+$hover-dark: dark(4);
+
+$primary-text-dark: dark(1);
+$secondary-text-dark: rgba($primary-text-dark, 0.8);
+$tertiary-text-dark: rgba($primary-text-dark, 0.6);
+
+// LIGHT
+$background-light: light(1);
+$accent-light: light(2);
+$focus-light: light(3);
+$hover-light: light(4);
+
+$primary-text-light: light(1);
+$secondary-text-light: rgba($primary-text-light, 0.8);
+$tertiary-text-light: rgba($primary-text-light, 0.6);
