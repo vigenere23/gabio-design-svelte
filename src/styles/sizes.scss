@@ -9,3 +9,7 @@ $border-radius-large: 2rem;
 @mixin text-margin {
   margin: 4rem 0 8rem 0;
 }
+
+@function rem($size) {
+  @return ($size / 16px) * 1rem;
+}

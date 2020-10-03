@@ -1,11 +1,12 @@
 @import 'colors';
 @import 'fonts';
 
-html {
+:global(html) {
   background-color: light(1);
 }
 
-body {
+:global(body) {
+  padding: 0;
   margin: 0;
   font-family: $classic-font;
   font-weight: 500;
