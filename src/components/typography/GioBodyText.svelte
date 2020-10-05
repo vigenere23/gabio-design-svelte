@@ -5,7 +5,7 @@
 </div>
 
 <script lang="ts">
-  import { GioText } from '..'
+  import GioText from './GioText.svelte'
 
   export let noMargin = false
   export let dark = false

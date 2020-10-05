@@ -1,11 +1,11 @@
 <div class="gio-caption" class:dark class:noMargin class:noBorder>
-  <GioText {dark} type="primary">
+  <GioText {dark} type="secondary">
     <slot />
   </GioText>
 </div>
 
 <script lang="ts">
-  import { GioText } from '..'
+  import GioText from './GioText.svelte'
 
   export let dark = false
   export let noMargin = false
@@ -23,6 +23,11 @@
     border-radius: $border-radius-small;
     border-left: solid rem(3px) $tertiary-text-dark;
     @include text-margin;
+
+    &.dark {
+      background-color: $accent-dark;
+      border-left-color: $tertiary-text-light;
+    }
 
     &.noBorder {
       border-left: none;

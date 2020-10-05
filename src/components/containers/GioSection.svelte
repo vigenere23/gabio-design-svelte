@@ -13,6 +13,7 @@
   .gio-section {
     width: 100%;
     background-color: $background-light;
+    overflow: auto;
 
     &:not(.no-padding) {
       padding: rem(56px) 0;
