@@ -8,9 +8,12 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@gabio/markdown-transpiler": "^1.2.7",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^6.0.0",
     "@tsconfig/svelte": "^1.0.10",
+    "@types/marked": "^1.1.0",
+    "marked": "^1.2.0",
     "prettier-plugin-svelte": "^1.4.0",
     "rollup": "^2.0.0",
     "rollup-plugin-sizes": "^1.0.3",

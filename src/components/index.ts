@@ -1,1 +1,6 @@
+export { default as GioBodyText } from './typography/GioBodyText.svelte'
+export { default as GioCaption } from './typography/GioCaption.svelte'
+export { default as GioHeading } from './typography/GioHeading.svelte'
+export { default as GioInlineCode } from './typography/GioInlineCode.svelte'
 export { default as GioTitle } from './typography/GioTitle.svelte'
+export { default as GioText } from './typography/GioText.svelte'
