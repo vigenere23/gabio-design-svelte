@@ -8,7 +8,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@gabio/markdown-transpiler": "^1.2.7",
+    "@gabio/markdown-transpiler": "^1.3.1",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^6.0.0",
     "@tsconfig/svelte": "^1.0.10",

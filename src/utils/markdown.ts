@@ -2,7 +2,7 @@ import type { MarkdownParser } from '@gabio/markdown-transpiler'
 import marked, { Renderer } from 'marked'
 import { RelativeUrlResolver, resolveURL } from './url'
 
-class GioMarkdownRenderer extends Renderer {
+class GioSvelteMarkdownRenderer extends Renderer {
   constructor(private relativeUrlResolver: RelativeUrlResolver) {
     super()
   }
@@ -10,12 +10,12 @@ class GioMarkdownRenderer extends Renderer {
   heading(text: string, level: number): string {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-')
     return level === 1
-      ? `<GioTitle no-margin fontSize="12rem">${text}</GioTitle>\n`
+      ? `<GioTitle noMargin fontSize="${48 / 16}rem">${text}</GioTitle>\n`
       : level === 6
       ? `<GioSubtitle>${text}</GioSubtitle>\n`
-      : `<GioHeading :level="${
+      : `<GioHeading level={${
           level - 1
-        }" id="#${escapedText}">${text}</GioHeading>\n`
+        }}" id="#${escapedText}">${text}</GioHeading>\n`
   }
 
   paragraph(text: string): string {
@@ -44,7 +44,7 @@ class GioMarkdownRenderer extends Renderer {
   }
 
   list(body: string /*ordered: boolean, start: number*/): string {
-    return `<GioBodyText no-margin><GioList indent>${body}</GioList></GioBodyText>\n`
+    return `<GioBodyText noMargin><GioList indent>${body}</GioList></GioBodyText>\n`
   }
 
   listitem(text: string): string {
@@ -56,33 +56,30 @@ class GioMarkdownRenderer extends Renderer {
   }
 }
 
-export class GioMarkdownParser implements MarkdownParser {
+export class GioSvelteMarkdownParser implements MarkdownParser {
   private renderer: Renderer
 
   constructor(relativeUrlResolver: RelativeUrlResolver) {
-    this.renderer = new GioMarkdownRenderer(relativeUrlResolver)
+    this.renderer = new GioSvelteMarkdownRenderer(relativeUrlResolver)
   }
 
-  // TODO update when components exportation works
-  // dependencies = {
-  //   '@vigenere23/gio': [
-  //     'GioBodyText',
-  //     'GioTitle',
-  //     'GioSubtitle',
-  //     'GioHeading',
-  //     'GioCaption',
-  //     'GioInlineCode',
-  //     'GioCodeBlock',
-  //     'GioList',
-  //     'GioListItem',
-  //     'GioCaptionedImage',
-  //     'GioSmartLink'
-  //   ]
-  // }
+  dependencies = {
+    '@gabio/design-svelte': [
+      'GioBodyText',
+      'GioTitle',
+      'GioSubtitle',
+      'GioHeading',
+      'GioCaption',
+      'GioInlineCode',
+      'GioCodeBlock',
+      'GioList',
+      'GioListItem',
+      'GioCaptionedImage',
+      'GioSmartLink'
+    ]
+  }
 
-  dependencies = {}
-
-  toVue(markdownContent: string): string {
+  parse(markdownContent: string): string {
     return marked(markdownContent, {
       renderer: this.renderer
     })

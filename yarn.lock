@@ -28,10 +28,10 @@
   resolved "https://registry.yarnpkg.com/@emmetio/extract-abbreviation/-/extract-abbreviation-0.1.6.tgz#e4a9856c1057f0aff7d443b8536477c243abe28c"
   integrity sha512-Ce3xE2JvTSEbASFbRbA1gAIcMcZWdS2yUYRaQbeM0nbOzaZrUYfa3ePtcriYRZOZmr+CkKA+zbjhvTpIOAYVcw==
 
-"@gabio/markdown-transpiler@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@gabio/markdown-transpiler/-/markdown-transpiler-1.2.7.tgz#cb7b27a8f35b79ee20a07a911879bd6ee8f206d0"
-  integrity sha512-5Teg9ob+fqZeQRzpx79PEg61H1zKgLaZmwXcxikXC7mTdceQT4clRTsRTNwLhFMasJxjoHGdK4p8LNa+AyW3Fw==
+"@gabio/markdown-transpiler@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@gabio/markdown-transpiler/-/markdown-transpiler-1.3.1.tgz#d948cfb7746e77762b389a6b6636075259d46ba4"
+  integrity sha512-pIggNmrGbvd3+5L2eCbvtu9rsEXyFtaM7QA6pBmEkvjuHJSdglSeNUuaj8Oho5esYycx12S4/tRPO9D2EjX2RQ==
   dependencies:
     glob "^7.1.6"
     marked "^1.1.1"
