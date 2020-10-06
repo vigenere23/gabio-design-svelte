@@ -1,17 +1,25 @@
-type Icons = { [key: string]: any }
+import type {
+  IconDefinition,
+  IconName
+} from '@fortawesome/fontawesome-common-types'
+
+type IconsInput = { [key: string]: IconDefinition }
+type FaIcons = {
+  [key in IconName]?: IconDefinition
+}
 
 export class FaIconRegistry {
-  private static icons: Icons = {}
+  private static icons: FaIcons = {}
 
-  public static registerIcons(icons: Icons) {
+  public static registerIcons(icons: IconsInput) {
     for (const [name, icon] of Object.entries(icons)) {
-      const iconName = name.replace('fa', '').toLowerCase()
+      const iconName = transformIconName(name)
       FaIconRegistry.icons[iconName] = icon
     }
   }
 
-  public static getIcon(iconName: string): any {
-    const icon: any = FaIconRegistry.icons[iconName]
+  public static getIcon(iconName: IconName): IconDefinition {
+    const icon: IconDefinition = FaIconRegistry.icons[iconName]
     if (!icon) {
       throw new Error(
         `Icon ${iconName} was not found. Did you register it with 'FaIconRegistry.registerIcons()'?`
@@ -19,4 +27,12 @@ export class FaIconRegistry {
     }
     return icon
   }
+}
+
+function transformIconName(iconName: string): IconName {
+  return iconName
+    .replace('fa', '')
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/_/g, '-')
+    .toLowerCase() as IconName
 }

@@ -9,8 +9,9 @@
 
 <script lang="ts">
   import { FaIconRegistry } from '../../utils/faicon-registry'
+  import type { IconName } from '@fortawesome/fontawesome-common-types'
 
-  export let name: string
+  export let name: IconName
 
   $: icon = FaIconRegistry.getIcon(name)
   $: viewBox = '0 0 ' + icon.icon[0] + ' ' + icon.icon[1]
