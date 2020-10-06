@@ -59,7 +59,7 @@
       padding: 0 rem(10px);
       border-radius: $border-radius-medium;
 
-      :global(.button-content > *) {
+      :global(.gio-button__content > *) {
         font-size: 0.9em;
       }
     }
@@ -101,20 +101,19 @@
       }
     }
 
-    > * {
-      flex: 0 0 auto;
-    }
-
     &__content {
       text-transform: uppercase;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+    }
 
-      > :not(:first-child) {
-        margin-left: rem(8px);
-      }
+    :global(.gio-button__content > *) {
+      flex-shrink: 0;
+    }
 
-      > * {
-        vertical-align: middle;
-      }
+    :global(.gio-button__content > :not(:first-child)) {
+      margin-left: rem(8px);
     }
   }
 </style>

@@ -8,11 +8,11 @@
 </svg>
 
 <script lang="ts">
-  import { FaIconRegisterer } from '../../utils/faicon-registerer'
+  import { FaIconRegistry } from '../../utils/faicon-registry'
 
-  export let iconName: string
+  export let name: string
 
-  $: icon = FaIconRegisterer.getIcon(iconName)
+  $: icon = FaIconRegistry.getIcon(name)
   $: viewBox = '0 0 ' + icon.icon[0] + ' ' + icon.icon[1]
   $: path = icon.icon[4]
 </script>
