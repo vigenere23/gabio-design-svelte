@@ -20,7 +20,11 @@ export default {
   ],
   plugins: [
     svelte({
-      preprocess: autoPreprocess()
+      preprocess: autoPreprocess({
+        postcss: {
+          plugins: [require('autoprefixer')]
+        }
+      })
     }),
     typescript({ sourceMap: !production }),
     resolve(),
