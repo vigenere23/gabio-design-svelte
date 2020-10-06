@@ -12,3 +12,7 @@ export function resolveURL(
 
   return relativeUrlResolver(url)
 }
+
+export function isRelativeUrl(url: string) {
+  return /^\.?\//.test(url)
+}

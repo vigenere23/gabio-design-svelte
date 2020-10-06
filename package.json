@@ -1,6 +1,6 @@
 {
   "name": "@gabio/design-svelte",
-  "svelte": "src/index.ts",
+  "svelte": "src/components/index.ts",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {

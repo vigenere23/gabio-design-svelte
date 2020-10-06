@@ -8,8 +8,7 @@ $one-dark-color-teal: hsl(187, 47%, 55%);
 $one-dark-color-blue: hsl(207, 82%, 66%);
 $one-dark-color-purple: hsl(286, 60%, 67%);
 
-// pre[class*="language-"] {
-pre {
+pre[class*='language-'] {
   margin: 0;
   padding: 16px;
   background-color: #282c34;
@@ -28,100 +27,101 @@ pre {
     tab-size: 4;
     hyphens: none;
     text-shadow: none;
+
+    &.language-ruby {
+      color: $one-dark-color-blue;
+    }
+
+    &::selection,
+    ::selection {
+      background-color: #383e49;
+    }
+
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+      color: #5c6370;
+    }
+
+    .token.punctuation,
+    .token.property {
+      color: #abb2bf;
+    }
+
+    .token.tag,
+    .token.parameter,
+    .token.title {
+      color: $one-dark-color-red;
+    }
+
+    .token.boolean,
+    .token.number,
+    .token.symbol,
+    .token.attr-name,
+    .token.deleted,
+    .token.selector,
+    .language-css {
+      color: $one-dark-color-orange;
+    }
+
+    .token.constant,
+    .token.class-name {
+      color: $one-dark-color-yellow;
+    }
+
+    .token.string,
+    .token.char,
+    .token.attr-value,
+    .token.builtin,
+    .token.inserted {
+      color: $one-dark-color-green;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+      color: $one-dark-color-teal;
+    }
+
+    .token.function {
+      color: $one-dark-color-blue;
+    }
+
+    .token.atrule,
+    .token.keyword,
+    .token.regex,
+    .language-css .token.important,
+    .token.variable,
+    .token.interpolation-punctuation {
+      color: $one-dark-color-purple;
+    }
+
+    .token.bold {
+      font-weight: bold;
+    }
+
+    .token.content {
+      padding: 0;
+    }
+
+    .token.comment,
+    .token.italic {
+      font-style: italic;
+    }
+
+    .token.important {
+      font-weight: 500;
+    }
+
+    .token.bold {
+      font-weight: 700;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
   }
-
-  &.language-ruby {
-    color: $one-dark-color-blue;
-  }
-
-  &::selection, ::selection {
-    background-color: #383e49;
-  }
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #5C6370;
-}
-
-.token.punctuation,
-.token.property {
-  color: #abb2bf;
-}
-
-.token.tag,
-.token.parameter,
-.token.title {
-  color: $one-dark-color-red;
-}
-
-.token.boolean,
-.token.number,
-.token.symbol,
-.token.attr-name,
-.token.deleted,
-.token.selector,
-.language-css {
-  color: $one-dark-color-orange;
-}
-
-.token.constant,
-.token.class-name {
-  color: $one-dark-color-yellow;
-}
-
-.token.string,
-.token.char,
-.token.attr-value,
-.token.builtin,
-.token.inserted {
-  color: $one-dark-color-green;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: $one-dark-color-teal;
-}
-
-.token.function {
-  color: $one-dark-color-blue;
-}
-
-.token.atrule,
-.token.keyword,
-.token.regex,
-.language-css .token.important,
-.token.variable,
-.token.interpolation-punctuation {
-  color: $one-dark-color-purple;
-}
-
-.token.bold {
-  font-weight: bold;
-}
-
-.token.content {
-  padding: 0;
-}
-
-.token.comment,
-.token.italic {
-  font-style: italic;
-}
-
-.token.important {
-  font-weight: 500;
-}
-
-.token.bold {
-  font-weight: 700;
-}
-
-.token.entity {
-  cursor: help;
 }
