@@ -33,7 +33,8 @@
   ],
   "files": [
     "src",
-    "dist"
+    "dist",
+    "lib"
   ],
   "dependencies": {},
   "version": "1.0.0",
