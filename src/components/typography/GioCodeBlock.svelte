@@ -47,7 +47,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 8px;
-      background-color: $accent-dark;
+      background-color: $hover-dark;
       color: $primary-text-light;
       text-align: left;
 

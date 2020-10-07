@@ -32,13 +32,14 @@
       background-color: white;
     }
 
-    :global([slot='image'] > *) {
+    :global([slot='image']) {
       border-radius: $border-radius-small;
       border: solid $border-size $accent-light;
+      overflow: hidden;
     }
 
     &.dark {
-      :global([slot='image'] > *) {
+      :global([slot='image']) {
         border-color: dark(2);
       }
     }

@@ -1,4 +1,5 @@
 @import '../fonts.scss';
+@import '../colors.scss';
 
 $one-dark-color-red: hsl(355, 65%, 65%);
 $one-dark-color-orange: hsl(29, 54%, 61%);
@@ -11,7 +12,7 @@ $one-dark-color-purple: hsl(286, 60%, 67%);
 pre[class*='language-'] {
   margin: 0;
   padding: 16px;
-  background-color: #282c34;
+  background-color: $accent-dark;
   overflow: auto;
 
   code {
@@ -34,7 +35,7 @@ pre[class*='language-'] {
 
     &::selection,
     ::selection {
-      background-color: #383e49;
+      background-color: $background-dark;
     }
 
     .token.comment,
