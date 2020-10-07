@@ -1,4 +1,4 @@
-<div class="gio-heading {levelClass}" class:dark class:noMargin>
+<div class="gio-heading {id} {levelClass}" class:dark class:noMargin>
   <slot />
 </div>
 
@@ -8,6 +8,7 @@
   export let dark = false
   export let noMargin = false
   export let level: HeadingLevel = 2
+  export let id: string = undefined
 
   $: levelClass = `level-${level}`
 </script>

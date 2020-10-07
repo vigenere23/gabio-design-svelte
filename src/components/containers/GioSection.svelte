@@ -1,14 +1,16 @@
-<section class="gio-section" class:dark class:noPadding>
+<section {id} class="gio-section" class:dark class:noPadding>
   <slot />
 </section>
 
 <script lang="ts">
   export let dark = false
   export let noPadding = false
+  export let id: string = undefined
 </script>
 
 <style lang="scss">
   @import '../../styles/colors';
+  @import '../../styles/sizes';
 
   .gio-section {
     width: 100%;

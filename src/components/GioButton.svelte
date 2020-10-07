@@ -21,7 +21,7 @@
   export let noMarginLeft = false
   export let noMarginRight = false
   export let size: Size = 'medium'
-  export let href = null
+  export let href: string = undefined
 
   const dispatch = createEventDispatcher()
 
@@ -72,6 +72,10 @@
         :global(.gio-button__content > *) {
           font-size: 0.9em;
         }
+
+        :global(.gio-button__content .gio-icon) {
+          margin-top: -0.15em;
+        }
       }
 
       &:hover,
@@ -115,13 +119,10 @@
 
     &__content {
       text-transform: uppercase;
+      letter-spacing: 0.05em;
       flex: 0 0 auto;
       display: flex;
       align-items: center;
-
-      :global(.gio-icon) {
-        margin-top: -0.15em;
-      }
     }
   }
 </style>

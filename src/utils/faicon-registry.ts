@@ -2,6 +2,7 @@ import type {
   IconDefinition,
   IconName
 } from '@fortawesome/fontawesome-common-types'
+import { fromPascalCaseToKebabCase } from './strings'
 
 type IconsInput = { [key: string]: IconDefinition }
 type FaIcons = {
@@ -30,9 +31,5 @@ export class FaIconRegistry {
 }
 
 function transformIconName(iconName: string): IconName {
-  return iconName
-    .replace('fa', '')
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/_/g, '-')
-    .toLowerCase() as IconName
+  return fromPascalCaseToKebabCase(iconName.replace('fa', '')) as IconName
 }

@@ -1,4 +1,9 @@
-<h1 class="gio-title" class:noMargin class:dark class:centered>
+<h1
+  class="gio-title"
+  class:noMargin
+  class:dark
+  class:centered
+  style="font-size: {fontSize}">
   <slot />
 </h1>
 
@@ -6,6 +11,7 @@
   export let noMargin = false
   export let dark = false
   export let centered = false
+  export let fontSize = '56px'
 </script>
 
 <style lang="scss">
@@ -13,13 +19,14 @@
   @import '../../styles/colors.scss';
   @import '../../styles/sizes.scss';
 
+  $font-size: var(--font-size);
+
   .gio-title {
     font-family: $special-font;
     font-weight: 700;
     color: $primary-text-dark;
     margin-top: rem(32px);
     margin-bottom: rem(32px);
-    font-size: rem(56px);
 
     &.noMargin {
       margin-top: 0;

@@ -3,14 +3,12 @@ import marked, { Renderer } from 'marked'
 
 class GioSvelteMarkdownRenderer extends Renderer {
   heading(text: string, level: number): string {
-    const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-')
+    const id = text.toLowerCase().replace(/[^\w]+/g, '-')
     return level === 1
       ? `<GioTitle noMargin fontSize="${48 / 16}rem">${text}</GioTitle>\n`
       : level === 6
       ? `<GioSubtitle>${text}</GioSubtitle>\n`
-      : `<GioHeading level={${
-          level - 1
-        }}" id="#${escapedText}">${text}</GioHeading>\n`
+      : `<GioHeading level={${level - 1}} id="#${id}">${text}</GioHeading>\n`
   }
 
   paragraph(text: string): string {
@@ -18,12 +16,17 @@ class GioSvelteMarkdownRenderer extends Renderer {
   }
 
   image(href: string, title: string, text: string): string {
+    const caption = text || title || ''
     return `
-      <GioCaptionedImage
-        :srcs="['${href}']"
-        caption="${text || title || ''}"
-        lazy
-      />\n`
+      <GioCaptionedImage caption="${caption}">
+        <div slot="image">
+          <GioImage
+            srcs={['${href}']}
+            desc="${caption}"
+            lazy
+          />
+        </div>
+      </GioCaptionedImage>\n`
   }
 
   blockquote(quote: string): string {
@@ -31,6 +34,7 @@ class GioSvelteMarkdownRenderer extends Renderer {
   }
 
   codespan(code: string): string {
+    code = this.svelteSafe(code)
     return `<GioInlineCode>${code}</GioInlineCode>`
   }
 
@@ -49,6 +53,10 @@ class GioSvelteMarkdownRenderer extends Renderer {
   link(href: string, _title: string, text: string) {
     return `<GioSmartLink accent href="${href}">${text}</GioSmartLink>`
   }
+
+  private svelteSafe(text: string): string {
+    return text.replace(/{/g, '&lbrace;').replace(/}/g, '&rbrace;')
+  }
 }
 
 export class GioSvelteMarkdownParser implements MarkdownParser {
@@ -66,7 +74,8 @@ export class GioSvelteMarkdownParser implements MarkdownParser {
       'GioList',
       'GioListItem',
       'GioCaptionedImage',
-      'GioSmartLink'
+      'GioSmartLink',
+      'GioImage'
     ]
   }
 

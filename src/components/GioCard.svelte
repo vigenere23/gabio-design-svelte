@@ -1,5 +1,5 @@
 <div class="gio-card" class:notReady>
-  <GioSmartLink {href}>
+  <GioSmartLink href={computedHref}>
     <div class="gio-card__container" class:dark>
       {#if notReady}
         <div class="gio-card__overlay">
@@ -47,6 +47,8 @@
   export let title: string
   export let desc: string
   export let tags: string[] = []
+
+  $: computedHref = notReady ? undefined : href
 </script>
 
 <style lang="scss">
