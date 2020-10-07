@@ -3,16 +3,16 @@
 </a>
 
 <script lang="ts">
-  import { isRelativeUrl } from '../utils/url'
+  import { isExternalUrl } from '../utils/url'
 
   export let href: string
   export let disable = false
   export let dark = false
   export let accent = false
 
-  $: isRelative = isRelativeUrl(href)
-  $: computedHref = !disable && !isRelative ? href : undefined
-  $: target = !disable && !isRelative && href ? '_blank' : undefined
+  $: isExternal = isExternalUrl(href)
+  $: computedHref = !disable && href ? href : undefined
+  $: target = !disable && isExternal && href ? '_blank' : undefined
 </script>
 
 <style lang="scss">

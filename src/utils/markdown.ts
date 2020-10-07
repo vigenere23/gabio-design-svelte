@@ -1,12 +1,7 @@
 import type { MarkdownParser } from '@gabio/markdown-transpiler'
 import marked, { Renderer } from 'marked'
-import { RelativeUrlResolver, resolveURL } from './url'
 
 class GioSvelteMarkdownRenderer extends Renderer {
-  constructor(private relativeUrlResolver: RelativeUrlResolver) {
-    super()
-  }
-
   heading(text: string, level: number): string {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-')
     return level === 1
@@ -25,7 +20,7 @@ class GioSvelteMarkdownRenderer extends Renderer {
   image(href: string, title: string, text: string): string {
     return `
       <GioCaptionedImage
-        :srcs="[require(\`${resolveURL(href, this.relativeUrlResolver)}\`)]"
+        :srcs="['${href}']"
         caption="${text || title || ''}"
         lazy
       />\n`
@@ -57,11 +52,7 @@ class GioSvelteMarkdownRenderer extends Renderer {
 }
 
 export class GioSvelteMarkdownParser implements MarkdownParser {
-  private renderer: Renderer
-
-  constructor(relativeUrlResolver: RelativeUrlResolver) {
-    this.renderer = new GioSvelteMarkdownRenderer(relativeUrlResolver)
-  }
+  private renderer: Renderer = new GioSvelteMarkdownRenderer()
 
   dependencies = {
     '@gabio/design-svelte': [

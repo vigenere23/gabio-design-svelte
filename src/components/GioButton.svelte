@@ -1,14 +1,12 @@
-<div
-  class="gio-button {size}"
-  class:dark
-  class:noMarginLeft
-  class:noMarginRight>
+<div class="gio-button__wrapper" class:noMarginLeft class:noMarginRight>
   <GioSmartLink {href} on:click={handleClick}>
-    <GioText {dark} type="primary">
-      <div class="gio-button__content">
-        <slot />
-      </div>
-    </GioText>
+    <div class="gio-button__container {size}" class:dark>
+      <GioText {dark} type="primary">
+        <div class="gio-button__content">
+          <slot />
+        </div>
+      </GioText>
+    </div>
   </GioSmartLink>
 </div>
 
@@ -38,66 +36,80 @@
   @import '../styles/sizes';
 
   .gio-button {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    background-color: $accent-light;
-    color: $primary-text-dark;
-    margin-left: rem(8px);
-    margin-right: rem(8px);
-    cursor: pointer;
-    @include transition(base, out, color, background-color);
+    &__wrapper {
+      margin-left: rem(8px);
+      margin-right: rem(8px);
+      width: fit-content;
 
-    &.medium {
-      height: rem(36px);
-      padding: 0 rem(12px);
-      border-radius: $border-radius-medium;
-    }
+      &.noMarginLeft {
+        margin-left: 0;
+      }
 
-    &.small {
-      height: rem(32px);
-      padding: 0 rem(10px);
-      border-radius: $border-radius-medium;
-
-      :global(.gio-button__content > *) {
-        font-size: 0.9em;
+      &.noMarginRight {
+        margin-right: 0;
       }
     }
 
-    &.noMarginLeft {
-      margin-left: 0;
-    }
+    &__container {
+      display: flex;
+      align-items: center;
+      background-color: $accent-light;
+      color: $primary-text-dark;
+      cursor: pointer;
+      @include transition(base, out, color, background-color);
 
-    &.noMarginRight {
-      margin-right: 0;
-    }
+      &.medium {
+        height: rem(36px);
+        border-radius: $border-radius-medium;
+        padding: 0 rem(12px);
+      }
 
-    &:hover,
-    &:active,
-    &:focus {
-      @include transition(base, in, color, background-color);
-    }
+      &.small {
+        height: rem(32px);
+        border-radius: $border-radius-medium;
+        padding: 0 rem(10px);
 
-    &:active,
-    &:focus {
-      background-color: $focus-light;
-    }
+        :global(.gio-button__content > *) {
+          font-size: 0.9em;
+        }
+      }
 
-    &:hover {
-      background-color: $hover-light;
-    }
-
-    &.dark {
-      background-color: $accent-dark;
-      color: $primary-text-light;
+      &:hover,
+      &:active,
+      &:focus {
+        @include transition(base, in, color, background-color);
+      }
 
       &:active,
       &:focus {
-        background-color: $focus-dark;
+        background-color: $focus-light;
       }
 
       &:hover {
-        background-color: $hover-dark;
+        background-color: $hover-light;
+      }
+
+      &.dark {
+        background-color: $accent-dark;
+        color: $primary-text-light;
+
+        &:active,
+        &:focus {
+          background-color: $focus-dark;
+        }
+
+        &:hover {
+          background-color: $hover-dark;
+        }
+      }
+
+      :global(.gio-button__content > *) {
+        flex-shrink: 0;
+        line-height: 1em;
+      }
+
+      :global(.gio-button__content > :not(:first-child)) {
+        margin-left: rem(8px);
       }
     }
 
@@ -106,15 +118,10 @@
       flex: 0 0 auto;
       display: flex;
       align-items: center;
-    }
 
-    :global(.gio-button__content > *) {
-      flex-shrink: 0;
-      line-height: 1em;
-    }
-
-    :global(.gio-button__content > :not(:first-child)) {
-      margin-left: rem(8px);
+      :global(.gio-icon) {
+        margin-top: -0.15em;
+      }
     }
   }
 </style>
