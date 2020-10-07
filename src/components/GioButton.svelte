@@ -110,6 +110,7 @@
 
     :global(.gio-button__content > *) {
       flex-shrink: 0;
+      line-height: 1em;
     }
 
     :global(.gio-button__content > :not(:first-child)) {

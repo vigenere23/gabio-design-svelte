@@ -1,4 +1,5 @@
 export { default as GioButton } from './GioButton.svelte'
+export { default as GioCard } from './GioCard.svelte'
 export { default as GioSmartLink } from './GioSmartLink.svelte'
 export { default as GioContent } from './containers/GioContent.svelte'
 export { default as GioLetterPage } from './containers/GioLetterPage.svelte'

@@ -20,6 +20,7 @@
     font-weight: 700;
     padding: rem(3px) rem(7px);
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     border-radius: $border-radius-small;
     display: inline-block;
     color: $primary-text-light;
