@@ -116,6 +116,15 @@
       border-radius: $border-radius-small;
       overflow: hidden;
       position: relative;
+
+      :global([slot='image']),
+      :global([slot='image'] > *) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &__content {
@@ -142,13 +151,5 @@
       display: flex;
       justify-content: flex-end;
     }
-  }
-
-  :global(.gio-card__image-wrapper > *) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 </style>
