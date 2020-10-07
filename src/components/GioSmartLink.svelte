@@ -1,4 +1,10 @@
-<a href={computedHref} {target} class="gio-smart-link" class:dark class:accent>
+<a
+  class="gio-smart-link"
+  class:dark
+  class:accent
+  rel="noopener"
+  href={computedHref}
+  {target}>
   <slot />
 </a>
 
