@@ -9,7 +9,7 @@
 </a>
 
 <script lang="ts">
-  import { isExternalUrl } from '../utils/url'
+  import { isExternalUrl } from '../lib/url'
 
   export let href: string
   export let disable = false

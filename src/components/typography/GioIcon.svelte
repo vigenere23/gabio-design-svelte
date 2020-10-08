@@ -8,7 +8,7 @@
 </svg>
 
 <script lang="ts">
-  import { FaIconRegistry } from '../../utils/faicon-registry'
+  import { FaIconRegistry } from '../../lib/faicon-registry'
   import type { IconName } from '@fortawesome/fontawesome-common-types'
 
   export let name: IconName

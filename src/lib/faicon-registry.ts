@@ -20,13 +20,13 @@ export class FaIconRegistry {
   }
 
   public static getIcon(iconName: IconName): IconDefinition {
-    const icon: IconDefinition = FaIconRegistry.icons[iconName]
+    const icon = FaIconRegistry.icons[iconName]
     if (!icon) {
       throw new Error(
         `Icon ${iconName} was not found. Did you register it with 'FaIconRegistry.registerIcons()'?`
       )
     }
-    return icon
+    return icon as IconDefinition
   }
 }
 

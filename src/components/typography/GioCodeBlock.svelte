@@ -17,7 +17,7 @@
 
 <script lang="ts">
   import GioText from './GioText.svelte'
-  import Prism from '../../../lib/prism.min.js'
+  import Prism from '../../../vendors/prism.min.js'
   import { onMount } from 'svelte'
 
   export let language: string

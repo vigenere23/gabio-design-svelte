@@ -4,8 +4,10 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "build": "npm run build:svelte && npm run build:lib",
+    "prepublishOnly": "npm run build",
+    "build:lib": "tsc -p src/lib",
+    "build:svelte": "rollup -c"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-common-types": "^0.2.32",
@@ -34,7 +36,8 @@
   "files": [
     "src",
     "dist",
-    "lib"
+    "lib",
+    "vendors"
   ],
   "dependencies": {},
   "version": "1.0.6",
