@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build:svelte && npm run build:lib",
     "prepublishOnly": "npm run build",
-    "build:lib": "tsc -p src/lib",
+    "build:lib": "node scripts/build-lib",
     "build:svelte": "rollup -c"
   },
   "devDependencies": {
