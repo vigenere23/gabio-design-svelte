@@ -45,7 +45,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "gab.io design library - in svelte!",
+  "description": "A killer Svelte design library",
   "repository": {
     "type": "git",
     "url": "git@github.com-vigenere23:vigenere23/gabio-design-svelte.git"
@@ -53,7 +53,7 @@
   "author": "Gabriel St-Pierre",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vigenere23/gabio-design-vue/issues"
+    "url": "https://github.com/vigenere23/gabio-design-svelte/issues"
   },
-  "homepage": "https://github.com/vigenere23/gabio-design-vue#readme"
+  "homepage": "https://github.com/vigenere23/gabio-design-svelte#readme"
 }

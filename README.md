@@ -120,6 +120,10 @@ To apply a style, simply import it in your `App.svelte` component **as global ru
 </style>
 ```
 
+### Markdown transpiler
+
+The library provides a `GioSvelteMarkdownParser` for parsing markdown content to this library's components. It also works marvelously with the [@gabio/markdown-parser](https://www.npmjs.com/package/@gabio/markdown-transpiler). Give it a try!
+
 ## Enjoy!
 
 This project was made by Gabriel St-Pierre ([@vigenere23](https://github.com/vigenere23)) as an open source design library. I hope it can inspire you or make you better understand the Svelte ecosystem!
