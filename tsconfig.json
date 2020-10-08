@@ -2,8 +2,5 @@
   "extends": "@tsconfig/svelte/tsconfig.json",
 
   "include": ["src/**/*", "stories"],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
-  "compilerOptions": {
-    "importsNotUsedAsValues": "remove"
-  }
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
 }
