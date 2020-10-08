@@ -8,12 +8,12 @@
 </svg>
 
 <script lang="ts">
-  import { FaIconRegistry } from '../../lib/faicon-registry'
+  import { IconRegistry } from '../../lib/icon-registry'
   import type { IconName } from '@fortawesome/fontawesome-common-types'
 
   export let name: IconName
 
-  $: icon = FaIconRegistry.getIcon(name)
+  $: icon = IconRegistry.getIcon(name)
   $: viewBox = '0 0 ' + icon.icon[0] + ' ' + icon.icon[1]
   $: path = icon.icon[4]
 </script>

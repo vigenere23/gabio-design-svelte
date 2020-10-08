@@ -31,7 +31,8 @@
     "typescript": "^4.0.3"
   },
   "keywords": [
-    "svelte"
+    "svelte",
+    "design"
   ],
   "files": [
     "src",
@@ -50,5 +51,9 @@
     "url": "git@github.com-vigenere23:vigenere23/gabio-design-svelte.git"
   },
   "author": "Gabriel St-Pierre",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigenere23/gabio-design-vue/issues"
+  },
+  "homepage": "https://github.com/vigenere23/gabio-design-vue#readme"
 }

@@ -5,25 +5,25 @@ import type {
 import { fromPascalCaseToKebabCase } from './strings'
 
 type IconsInput = { [key: string]: IconDefinition }
-type FaIcons = {
+type Icons = {
   [key in IconName]?: IconDefinition
 }
 
-export class FaIconRegistry {
-  private static icons: FaIcons = {}
+export class IconRegistry {
+  private static icons: Icons = {}
 
   public static registerIcons(icons: IconsInput) {
     for (const [name, icon] of Object.entries(icons)) {
       const iconName = transformIconName(name)
-      FaIconRegistry.icons[iconName] = icon
+      IconRegistry.icons[iconName] = icon
     }
   }
 
   public static getIcon(iconName: IconName): IconDefinition {
-    const icon = FaIconRegistry.icons[iconName]
+    const icon = IconRegistry.icons[iconName]
     if (!icon) {
       throw new Error(
-        `Icon ${iconName} was not found. Did you register it with 'FaIconRegistry.registerIcons()'?`
+        `Icon ${iconName} was not found. Did you register it with 'IconRegistry.registerIcons()'?`
       )
     }
     return icon as IconDefinition
