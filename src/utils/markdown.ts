@@ -1,4 +1,4 @@
-import type { MarkdownParser } from '@gabio/markdown-transpiler'
+import { MarkdownParser } from '@gabio/markdown-transpiler'
 import marked, { Renderer } from 'marked'
 
 class GioSvelteMarkdownRenderer extends Renderer {
