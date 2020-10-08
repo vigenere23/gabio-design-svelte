@@ -8,6 +8,8 @@
 </script>
 
 <style lang="scss">
+  @import '../../styles/sizes';
+
   .gio-content {
     width: 100%;
     margin: auto;
