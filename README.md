@@ -1,9 +1,9 @@
 ![Build](https://github.com/vigenere23/gabio-design-svelte/workflows/Build/badge.svg)
 [![npm version](https://badge.fury.io/js/%40gabio%2Fdesign-svelte.svg)](https://badge.fury.io/js/%40gabio%2Fdesign-svelte)
 
-# ☠️ [@gabio/design-svelte](https://www.npmjs.com/package/@gabio/design-svelte)
+# [@gabio/design-svelte](https://www.npmjs.com/package/@gabio/design-svelte)
 
-A killer Svelte design library!
+☠️ A killer Svelte design library!
 
 ## Installation
 
