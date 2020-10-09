@@ -62,21 +62,23 @@ class GioSvelteMarkdownRenderer extends Renderer {
 export class GioSvelteMarkdownParser implements MarkdownParser {
   private renderer: Renderer = new GioSvelteMarkdownRenderer()
 
-  dependencies = {
-    '@gabio/design-svelte': [
-      'GioBodyText',
-      'GioTitle',
-      'GioSubtitle',
-      'GioHeading',
-      'GioCaption',
-      'GioInlineCode',
-      'GioCodeBlock',
-      'GioList',
-      'GioListItem',
-      'GioCaptionedImage',
-      'GioSmartLink',
-      'GioImage'
-    ]
+  getDependencies() {
+    return {
+      '@gabio/design-svelte': [
+        'GioBodyText',
+        'GioTitle',
+        'GioSubtitle',
+        'GioHeading',
+        'GioCaption',
+        'GioInlineCode',
+        'GioCodeBlock',
+        'GioList',
+        'GioListItem',
+        'GioCaptionedImage',
+        'GioSmartLink',
+        'GioImage'
+      ]
+    }
   }
 
   parse(markdownContent: string): string {

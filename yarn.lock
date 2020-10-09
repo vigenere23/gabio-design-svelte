@@ -848,10 +848,10 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.32.tgz#3436795d5684f22742989bfa08f46f50f516f259"
   integrity sha512-ux2EDjKMpcdHBVLi/eWZynnPxs0BtFVXJkgHIxXRl+9ZFaHPvYamAfCzeeQFqHRjuJtX90wVnMRaMQAAlctz3w==
 
-"@gabio/markdown-transpiler@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@gabio/markdown-transpiler/-/markdown-transpiler-1.3.1.tgz#d948cfb7746e77762b389a6b6636075259d46ba4"
-  integrity sha512-pIggNmrGbvd3+5L2eCbvtu9rsEXyFtaM7QA6pBmEkvjuHJSdglSeNUuaj8Oho5esYycx12S4/tRPO9D2EjX2RQ==
+"@gabio/markdown-transpiler@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@gabio/markdown-transpiler/-/markdown-transpiler-1.4.1.tgz#20fc4484a067e9dec8c5b63d3e4ca9740bdafa1a"
+  integrity sha512-m6V92ZUiiGKKJwyD8J41vuVkuw9444YDMc41PdD7nuqzNE4qpD4xNrl1UQkzQdm8tmTD5WU4dScnt9NFNGr0wA==
   dependencies:
     glob "^7.1.6"
     marked "^1.1.1"
