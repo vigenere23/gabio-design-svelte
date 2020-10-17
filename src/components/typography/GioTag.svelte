@@ -16,9 +16,9 @@
 
   .gio-tag {
     font-family: $classic-font;
-    font-size: 0.75em;
+    font-size: 0.7em;
     font-weight: 700;
-    padding: rem(3px) rem(7px);
+    padding: rem(5px) rem(7px);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border-radius: $border-radius-small;

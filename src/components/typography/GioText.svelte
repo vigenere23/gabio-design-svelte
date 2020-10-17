@@ -18,6 +18,7 @@
     font-family: $classic-font;
     font-size: rem(16px);
     font-weight: 500;
+    line-height: 1;
 
     &.primary {
       color: $primary-text-dark;

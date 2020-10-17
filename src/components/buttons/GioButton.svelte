@@ -11,8 +11,8 @@
 </div>
 
 <script lang="ts">
-  import GioSmartLink from './GioSmartLink.svelte'
-  import GioText from './typography/GioText.svelte'
+  import GioSmartLink from '../GioSmartLink.svelte'
+  import GioText from '../typography/GioText.svelte'
   import { createEventDispatcher } from 'svelte'
 
   type Size = 'small' | 'medium'
@@ -31,9 +31,9 @@
 </script>
 
 <style lang="scss">
-  @import '../styles/colors';
-  @import '../styles/transitions';
-  @import '../styles/sizes';
+  @import '../../styles/colors';
+  @import '../../styles/transitions';
+  @import '../../styles/sizes';
 
   .gio-button {
     &__wrapper {
@@ -74,7 +74,7 @@
         }
 
         :global(.gio-button__content .gio-icon) {
-          margin-top: -0.15em;
+          margin-top: -0.1em;
         }
       }
 

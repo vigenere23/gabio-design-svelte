@@ -65,6 +65,7 @@
 
     &__container {
       padding: rem(6px);
+      padding-bottom: rem(8px);
       background-color: $accent-light;
       border: solid 3px $accent-light;
       @include transition(base, out, background-color);
@@ -143,13 +144,15 @@
     }
 
     &__desc {
-      line-height: 1.2em;
+      :global(.gio-text) {
+        line-height: 1.2em;
+      }
       max-height: 4 * 1.2em;
       overflow: hidden;
     }
 
     &__actions {
-      margin-top: rem(24px);
+      margin-top: rem(16px);
       display: flex;
       justify-content: flex-end;
     }
