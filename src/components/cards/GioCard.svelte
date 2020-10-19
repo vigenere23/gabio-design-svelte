@@ -36,10 +36,10 @@
 </div>
 
 <script lang="ts">
-  import GioSmartLink from './GioSmartLink.svelte'
-  import GioHeading from './typography/GioHeading.svelte'
-  import GioTag from './typography/GioTag.svelte'
-  import GioText from './typography/GioText.svelte'
+  import GioSmartLink from '../GioSmartLink.svelte'
+  import GioHeading from '../typography/GioHeading.svelte'
+  import GioTag from '../typography/GioTag.svelte'
+  import GioText from '../typography/GioText.svelte'
 
   export let dark = false
   export let notReady = false
@@ -52,9 +52,9 @@
 </script>
 
 <style lang="scss">
-  @import '../styles/colors';
-  @import '../styles/sizes';
-  @import '../styles/transitions';
+  @import '../../styles/colors';
+  @import '../../styles/sizes';
+  @import '../../styles/transitions';
 
   .gio-card {
     display: block;
@@ -68,6 +68,7 @@
       padding-bottom: rem(8px);
       background-color: $accent-light;
       border: solid 3px $accent-light;
+      border-radius: $border-radius-medium;
       @include transition(base, out, background-color);
 
       &:hover,

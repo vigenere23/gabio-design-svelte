@@ -24,6 +24,7 @@
     color: $primary-text-dark;
     margin-top: rem(16px);
     margin-bottom: rem(16px);
+    line-height: 1.1;
 
     &.level-1 {
       font-size: rem(38px);
