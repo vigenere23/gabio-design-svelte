@@ -37,5 +37,6 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
 
       - name: Post Publishing
-        run: git push
-        run: git push --tags
+        run: |
+          git push
+          git push --tags
