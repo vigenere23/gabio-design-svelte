@@ -13,15 +13,16 @@
   import GioText from '../typography/GioText.svelte'
   import GioIcon from '../typography/GioIcon.svelte'
   import { createEventDispatcher } from 'svelte'
+  import type { IconName } from '@fortawesome/fontawesome-common-types'
 
   type Size = 'small' | 'medium'
 
-  export let dark = false
-  export let noMarginLeft = false
-  export let noMarginRight = false
+  export let dark: boolean = false
+  export let noMarginLeft: boolean = false
+  export let noMarginRight: boolean = false
   export let size: Size = 'medium'
   export let href: string = undefined
-  export let name: string
+  export let name: IconName
 
   const dispatch = createEventDispatcher()
 
@@ -71,10 +72,6 @@
         :global(.gio-text) {
           font-size: 0.8em;
           line-height: 0.8em;
-        }
-
-        :global(.gio-text > .gio-icon) {
-          //margin-top: -0.15em;
         }
       }
 

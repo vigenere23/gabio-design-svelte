@@ -20,7 +20,7 @@
   export let srcs: string[] = []
   export let desc: string
   export let objectFit: ObjectFit = undefined
-  export let lazy = false
+  export let lazy: boolean = false
 
   let imageElement: HTMLImageElement
   let srcsets: string[] = []

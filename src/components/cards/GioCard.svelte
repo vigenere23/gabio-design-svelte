@@ -41,8 +41,8 @@
   import GioTag from '../typography/GioTag.svelte'
   import GioText from '../typography/GioText.svelte'
 
-  export let dark = false
-  export let notReady = false
+  export let dark: boolean = false
+  export let notReady: boolean = false
   export let href: string = undefined
   export let title: string
   export let desc: string

@@ -3,8 +3,8 @@
 </ul>
 
 <script lang="ts">
-  export let indent = false
-  export let noMargin = false
+  export let indent: boolean = false
+  export let noMargin: boolean = false
 </script>
 
 <style lang="scss">

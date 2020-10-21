@@ -5,7 +5,7 @@
 <script lang="ts">
   type TextType = 'primary' | 'secondary' | 'tertiary'
 
-  export let dark = false
+  export let dark: boolean = false
   export let type: TextType = 'secondary'
 </script>
 

@@ -5,7 +5,7 @@
 <script lang="ts">
   type TagType = 'primary' | 'secondary'
 
-  export let dark = false
+  export let dark: boolean = false
   export let type: TagType = 'primary'
 </script>
 

@@ -9,15 +9,17 @@
 </a>
 
 <script lang="ts">
-  import { isExternalUrl } from '../lib/url'
+  import { isExternalUrl, toSpaRoute } from '../lib/url'
 
   export let href: string
-  export let disable = false
-  export let dark = false
-  export let accent = false
+  export let disable: boolean = false
+  export let dark: boolean = false
+  export let accent: boolean = false
+  export let spa: boolean = false
 
   $: isExternal = isExternalUrl(href)
-  $: computedHref = !disable && href ? href : undefined
+  $: computedHref =
+    !disable && href ? (spa ? toSpaRoute(href) : href) : undefined
   $: target = !disable && isExternal && href ? '_blank' : undefined
 </script>
 

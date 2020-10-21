@@ -4,6 +4,7 @@ import sizes from 'rollup-plugin-sizes'
 import pkg from './package.json'
 import autoPreprocess from 'svelte-preprocess'
 import typescript from '@wessberg/rollup-plugin-ts'
+import nodePolyfills from 'rollup-plugin-node-polyfills'
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -27,6 +28,7 @@ export default {
       })
     }),
     typescript({ sourceMap: !production }),
+    nodePolyfills(),
     resolve(),
     sizes()
   ]

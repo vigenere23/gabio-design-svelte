@@ -3,7 +3,7 @@
 </span>
 
 <script lang="ts">
-  export let dark = false
+  export let dark: boolean = false
 </script>
 
 <style lang="scss">

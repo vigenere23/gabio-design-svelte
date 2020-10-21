@@ -5,8 +5,8 @@
 <script lang="ts">
   type HeadingLevel = 1 | 2 | 3 | 4
 
-  export let dark = false
-  export let noMargin = false
+  export let dark: boolean = false
+  export let noMargin: boolean = false
   export let level: HeadingLevel = 2
   export let id: string = undefined
 

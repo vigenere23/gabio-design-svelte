@@ -8,10 +8,10 @@
 </h1>
 
 <script lang="ts">
-  export let noMargin = false
-  export let dark = false
-  export let centered = false
-  export let fontSize = '56px'
+  export let noMargin: boolean = false
+  export let dark: boolean = false
+  export let centered: boolean = false
+  export let fontSize: string = '56px'
 </script>
 
 <style lang="scss">

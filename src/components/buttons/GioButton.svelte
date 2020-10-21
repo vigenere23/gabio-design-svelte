@@ -17,9 +17,9 @@
 
   type Size = 'small' | 'medium'
 
-  export let dark = false
-  export let noMarginLeft = false
-  export let noMarginRight = false
+  export let dark: boolean = false
+  export let noMarginLeft: boolean = false
+  export let noMarginRight: boolean = false
   export let size: Size = 'medium'
   export let href: string = undefined
 

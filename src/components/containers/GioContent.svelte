@@ -3,8 +3,8 @@
 </div>
 
 <script lang="ts">
-  export let noPadding = false
-  export let maxWidth = '1100px'
+  export let noPadding: boolean = false
+  export let maxWidth: string = '1100px'
 </script>
 
 <style lang="scss">

@@ -3,9 +3,9 @@
 </div>
 
 <script lang="ts">
-  export let dark = false
-  export let centered = false
-  export let noMargin = false
+  export let dark: boolean = false
+  export let centered: boolean = false
+  export let noMargin: boolean = false
 </script>
 
 <style lang="scss">

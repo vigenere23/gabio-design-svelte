@@ -10,7 +10,7 @@
 <script lang="ts">
   import GioCaption from '../typography/GioCaption.svelte'
 
-  export let dark = false
+  export let dark: boolean = false
   export let width = '100%'
   export let caption: string
 </script>

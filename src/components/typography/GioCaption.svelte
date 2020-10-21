@@ -7,9 +7,9 @@
 <script lang="ts">
   import GioText from './GioText.svelte'
 
-  export let dark = false
-  export let noMargin = false
-  export let noBorder = false
+  export let dark: boolean = false
+  export let noMargin: boolean = false
+  export let noBorder: boolean = false
 </script>
 
 <style lang="scss">

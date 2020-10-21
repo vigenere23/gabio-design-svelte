@@ -15,7 +15,7 @@
 
   $: icon = IconRegistry.getIcon(name)
   $: viewBox = '0 0 ' + icon.icon[0] + ' ' + icon.icon[1]
-  $: path = icon.icon[4]
+  $: path = icon.icon[4] as string
 </script>
 
 <style>

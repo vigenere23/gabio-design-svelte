@@ -3,8 +3,8 @@
 </section>
 
 <script lang="ts">
-  export let dark = false
-  export let noPadding = false
+  export let dark: boolean = false
+  export let noPadding: boolean = false
   export let id: string = undefined
 </script>
 
