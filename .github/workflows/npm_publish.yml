@@ -38,3 +38,4 @@ jobs:
 
       - name: Post Publishing
         run: git push
+        run: git push --tags
