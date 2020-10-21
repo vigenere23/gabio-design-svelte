@@ -4,10 +4,8 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm run build:svelte && npm run build:lib",
     "prepublishOnly": "npm run validate && npm run build",
-    "build:lib": "node scripts/build-lib",
-    "build:svelte": "rollup -c",
+    "build": "rollup -c --environment production",
     "validate": "svelte-check"
   },
   "devDependencies": {
@@ -22,6 +20,8 @@
     "postcss": "^8.1.1",
     "prettier-plugin-svelte": "^1.4.0",
     "rollup": "^2.0.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-execute": "^1.1.1",
     "rollup-plugin-node-polyfills": "^0.2.1",
     "rollup-plugin-sizes": "^1.0.3",
     "rollup-plugin-svelte": "^6.0.0",

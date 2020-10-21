@@ -5,6 +5,8 @@ import pkg from './package.json'
 import autoPreprocess from 'svelte-preprocess'
 import typescript from '@wessberg/rollup-plugin-ts'
 import nodePolyfills from 'rollup-plugin-node-polyfills'
+import del from 'rollup-plugin-delete'
+import execute from 'rollup-plugin-execute'
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -20,6 +22,7 @@ export default {
     { file: pkg.main, format: 'umd', name }
   ],
   plugins: [
+    del({ targets: ['dist/*', 'lib/*'] }),
     svelte({
       preprocess: autoPreprocess({
         postcss: {
@@ -30,6 +33,10 @@ export default {
     typescript({ sourceMap: !production }),
     nodePolyfills(),
     resolve(),
+    // Builds the external .ts files
+    execute('tsc -p src/lib'),
+    // Creates an index.d.ts for svelte components
+    execute(`echo "export * from '../src/components'" > dist/index.d.ts`),
     sizes()
   ]
 }
