@@ -40,7 +40,8 @@
     font-size: rem(14px);
     overflow: hidden;
     border-radius: $border-radius-medium;
-    @include text-margin;
+    margin-top: rem(32px);
+    margin-bottom: rem(32px);
 
     &__top-bar {
       display: flex;

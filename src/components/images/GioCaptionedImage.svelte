@@ -22,8 +22,9 @@
   $border-size: 3px;
 
   .gio-captioned-image {
-    margin: 16px auto;
     border-radius: $border-radius-medium;
+    margin-top: rem(32px);
+    margin-bottom: rem(32px);
 
     :global([slot='image']),
     :global([slot='image'] > *) {

@@ -18,7 +18,9 @@
     font-size: rem(22px);
     font-weight: 700;
     color: $tertiary-text-dark;
-    @include text-margin;
+    margin-top: rem(32px);
+    margin-bottom: rem(32px);
+    line-height: 1.5;
 
     &.noMargin {
       margin-top: 0;

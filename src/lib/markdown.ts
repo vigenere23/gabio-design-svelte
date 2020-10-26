@@ -58,7 +58,9 @@ class GioSvelteMarkdownRenderer extends Renderer {
 
   code(code: string, language?: string): string {
     this.addComponentDependencies(['GioCodeBlock'])
-    return `<GioCodeBlock language="${language}" code="${encodeURI(code)}" />\n`
+    return `<GioCodeBlock language="${language || ''}" code="${encodeURI(
+      code
+    )}" />\n`
   }
 
   list(body: string /*ordered: boolean, start: number*/): string {
