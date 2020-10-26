@@ -6,10 +6,9 @@ import marked, { Renderer } from 'marked'
 
 class GioSvelteMarkdownRenderer extends Renderer {
   private components: Set<string> = new Set()
+  private idIncrements: Map<string, number> = new Map()
 
   heading(text: string, level: number): string {
-    const id = text.toLowerCase().replace(/[^\w]+/g, '-')
-
     if (level === 1) {
       this.addComponentDependencies(['GioTitle'])
       return `<GioTitle noMargin fontSize="${48 / 16}rem">${text}</GioTitle>\n`
@@ -18,9 +17,15 @@ class GioSvelteMarkdownRenderer extends Renderer {
       return `<GioSubtitle>${text}</GioSubtitle>\n`
     } else {
       this.addComponentDependencies(['GioHeading'])
+      let id = text.toLowerCase().replace(/[^\w]+/g, '-')
+      const idAlreadyPresent = this.idIncrements.has(id)
+      this.idIncrements.set(id, (this.idIncrements.get(id) || 0) + 1)
+      if (idAlreadyPresent) {
+        id = `${id}-${this.idIncrements.get(id)}`
+      }
       return `<GioHeading level={${
         level - 1
-      }} id="#${id}">${text}</GioHeading>\n`
+      }} id="${id}">${text}</GioHeading>\n`
     }
   }
 

@@ -1,4 +1,4 @@
-<div class="gio-heading {id} {levelClass}" class:dark class:noMargin>
+<div {id} class="gio-heading {levelClass}" class:dark class:noMargin>
   <slot />
 </div>
 
