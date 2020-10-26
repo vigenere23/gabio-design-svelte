@@ -15,6 +15,8 @@
   @import '../../styles/sizes';
 
   .gio-body-text {
+    line-height: 1.8em;
+    font-size: rem(18px);
     @include text-margin;
 
     :global(.gio-text) {

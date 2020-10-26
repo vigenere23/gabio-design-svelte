@@ -29,10 +29,12 @@
     &.level-1 {
       font-size: rem(38px);
       padding: rem(4px) 0;
+      margin-top: rem(32px);
       border-bottom: solid rem(3px) $focus-light;
     }
 
     &.level-2 {
+      margin-top: rem(32px);
       font-size: rem(28px); // rem(32px);
     }
 

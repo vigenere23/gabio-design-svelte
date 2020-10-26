@@ -1,11 +1,11 @@
 <div class="gio-caption" class:dark class:noMargin class:noBorder>
-  <GioText {dark} type="secondary">
+  <GioBodyText {dark}>
     <slot />
-  </GioText>
+  </GioBodyText>
 </div>
 
 <script lang="ts">
-  import GioText from './GioText.svelte'
+  import GioBodyText from './GioBodyText.svelte'
 
   export let dark: boolean = false
   export let noMargin: boolean = false
@@ -39,15 +39,16 @@
     }
 
     // for markdown transpiling
-    :global(.gio-body-text),
-    :global(.gio-text) {
-      line-height: normal; // TODO check for replacement
-    }
-
-    // for markdown transpiling
     :global(.gio-body-text) {
       font-size: inherit;
-      margin: 0 !important;
+    }
+
+    :global(:first-child) {
+      margin-top: 0 !important;
+    }
+
+    :global(:last-child) {
+      margin-bottom: 0 !important;
     }
   }
 </style>
