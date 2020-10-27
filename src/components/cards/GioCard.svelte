@@ -1,11 +1,6 @@
-<div class="gio-card" class:notReady>
-  <GioSmartLink href={computedHref}>
+<div class="gio-card">
+  <GioSmartLink {href} on:click={handleClick}>
     <div class="gio-card__container" class:dark>
-      {#if notReady}
-        <div class="gio-card__overlay">
-          <GioHeading level={3} {dark}>Coming soon!</GioHeading>
-        </div>
-      {/if}
       {#if $$slots.image}
         <div class="gio-card__image-wrapper">
           <slot name="image" />
@@ -36,19 +31,23 @@
 </div>
 
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte'
   import GioSmartLink from '../GioSmartLink.svelte'
   import GioHeading from '../typography/GioHeading.svelte'
   import GioTag from '../typography/GioTag.svelte'
   import GioText from '../typography/GioText.svelte'
 
   export let dark: boolean = false
-  export let notReady: boolean = false
   export let href: string = undefined
   export let title: string
   export let desc: string
   export let tags: string[] = []
 
-  $: computedHref = notReady ? undefined : href
+  const dispatch = createEventDispatcher()
+
+  function handleClick(event: any) {
+    dispatch('click', event)
+  }
 </script>
 
 <style lang="scss">
@@ -63,6 +62,21 @@
     overflow: hidden;
     border-radius: $border-radius-medium;
 
+    :hover,
+    :focus,
+    :active {
+      .gio-card__container {
+        border-color: $accent-dark;
+        background-color: $focus-light;
+        @include transition(base, in, background-color, border-color);
+
+        &.dark {
+          background-color: $focus-dark;
+          border-color: $accent-light;
+        }
+      }
+    }
+
     &__container {
       padding: rem(6px);
       padding-bottom: rem(8px);
@@ -71,46 +85,10 @@
       border-radius: $border-radius-medium;
       @include transition(base, out, background-color);
 
-      &:hover,
-      &:focus,
-      &:active {
-        border-color: $accent-dark;
-        background-color: $focus-light;
-        @include transition(base, in, background-color, border-color);
-      }
-
       &.dark {
         background-color: $accent-dark;
         border-color: $accent-dark;
-
-        .gio-card__overlay {
-          background-color: rgba($focus-dark, 0.9);
-        }
-
-        &:focus,
-        &:active,
-        &:hover {
-          background-color: $focus-dark;
-          border-color: $accent-light;
-        }
       }
-    }
-
-    :global(&.notReady .gio-smart-link) {
-      cursor: default;
-    }
-
-    &__overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      background-color: rgba($focus-light, 0.9);
     }
 
     &__image-wrapper {
