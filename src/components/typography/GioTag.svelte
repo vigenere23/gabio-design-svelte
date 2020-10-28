@@ -16,11 +16,11 @@
 
   .gio-tag {
     font-family: $classic-font;
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700;
     padding: rem(5px) rem(7px);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     border-radius: $border-radius-small;
     display: inline-block;
     color: $primary-text-light;

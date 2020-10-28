@@ -1,4 +1,4 @@
-<div class="gio-caption" class:dark class:noMargin class:noBorder>
+<div class="gio-caption" class:dark class:noMargin>
   <GioBodyText {dark}>
     <slot />
   </GioBodyText>
@@ -9,7 +9,6 @@
 
   export let dark: boolean = false
   export let noMargin: boolean = false
-  export let noBorder: boolean = false
 </script>
 
 <style lang="scss">
@@ -17,8 +16,7 @@
   @import '../../styles/sizes';
 
   .gio-caption {
-    display: block;
-    padding: rem(10px) rem(12px);
+    padding: rem(8px) rem(12px);
     background-color: $accent-light;
     border-radius: $border-radius-small;
     border-left: solid rem(3px) $tertiary-text-dark;
@@ -27,10 +25,6 @@
     &.dark {
       background-color: $accent-dark;
       border-left-color: $tertiary-text-light;
-    }
-
-    &.noBorder {
-      border-left: none;
     }
 
     &.noMargin {

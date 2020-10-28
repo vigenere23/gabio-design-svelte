@@ -62,9 +62,9 @@
     overflow: hidden;
     border-radius: $border-radius-medium;
 
-    :hover,
-    :focus,
-    :active {
+    > :hover,
+    > :focus,
+    > :active {
       .gio-card__container {
         border-color: $accent-dark;
         background-color: $focus-light;
@@ -114,20 +114,14 @@
       padding-top: 0;
     }
 
-    &__title {
-      line-height: 1.2em;
-    }
-
     &__tags {
       margin-bottom: rem(16px);
     }
 
     &__desc {
       :global(.gio-text) {
-        line-height: 1.2em;
+        line-height: 1.3em;
       }
-      max-height: 4 * 1.2em;
-      overflow: hidden;
     }
 
     &__actions {

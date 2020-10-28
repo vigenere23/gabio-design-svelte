@@ -48,6 +48,35 @@
       &.noMarginRight {
         margin-right: 0;
       }
+
+      > :hover,
+      > :active,
+      > :focus {
+        .gio-button__container {
+          @include transition(base, in, color, background-color);
+        }
+      }
+
+      > :active,
+      > :focus {
+        .gio-button__container {
+          background-color: $focus-light;
+
+          &.dark {
+            background-color: $focus-dark;
+          }
+        }
+      }
+
+      > :hover {
+        .gio-button__container {
+          background-color: $hover-light;
+
+          &.dark {
+            background-color: $hover-dark;
+          }
+        }
+      }
     }
 
     &__container {
@@ -60,14 +89,14 @@
 
       &.medium {
         height: rem(36px);
-        border-radius: $border-radius-medium;
-        padding: 0 rem(12px);
+        border-radius: rem(18px);
+        padding: 0 rem(14px);
       }
 
       &.small {
         height: rem(32px);
-        border-radius: $border-radius-medium;
-        padding: 0 rem(10px);
+        border-radius: rem(16px);
+        padding: 0 rem(14px);
 
         :global(.gio-button__content > *) {
           font-size: 0.9em;
@@ -78,33 +107,14 @@
         }
       }
 
-      &:hover,
-      &:active,
-      &:focus {
-        @include transition(base, in, color, background-color);
-      }
-
-      &:active,
-      &:focus {
-        background-color: $focus-light;
-      }
-
-      &:hover {
-        background-color: $hover-light;
-      }
-
       &.dark {
         background-color: $accent-dark;
         color: $primary-text-light;
+      }
 
-        &:active,
-        &:focus {
-          background-color: $focus-dark;
-        }
-
-        &:hover {
-          background-color: $hover-dark;
-        }
+      :global(.gio-text) {
+        font-size: rem(15.6px);
+        font-weight: 700;
       }
 
       :global(.gio-button__content > *) {

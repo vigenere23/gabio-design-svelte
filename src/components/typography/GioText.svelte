@@ -16,7 +16,7 @@
 
   .gio-text {
     font-family: $classic-font;
-    font-size: rem(16px);
+    font-size: rem(17px);
     font-weight: 500;
     line-height: 1;
 

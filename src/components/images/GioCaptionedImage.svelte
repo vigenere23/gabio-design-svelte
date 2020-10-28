@@ -2,13 +2,13 @@
   <slot name="image" />
   {#if caption}
     <div class="gio-captioned-image__caption">
-      <GioCaption noMargin noBorder {dark}>{caption}</GioCaption>
+      <GioText {dark}>{caption}</GioText>
     </div>
   {/if}
 </div>
 
 <script lang="ts">
-  import GioCaption from '../typography/GioCaption.svelte'
+  import GioText from '../typography/GioText.svelte'
 
   export let dark: boolean = false
   export let width = '100%'
@@ -43,10 +43,22 @@
       :global([slot='image']) {
         border-color: dark(2);
       }
+
+      .gio-captioned-image__caption {
+        background-color: $accent-dark;
+        border-left-color: $tertiary-text-light;
+      }
     }
 
     &__caption {
       margin-top: -$border-size;
+      padding: rem(8px) rem(12px);
+      background-color: $accent-light;
+      border-radius: $border-radius-small;
+
+      :global(.gio-text) {
+        font-size: rem(16px) !important;
+      }
     }
   }
 </style>
