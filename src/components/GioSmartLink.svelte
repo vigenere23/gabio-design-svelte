@@ -35,6 +35,7 @@
   @import '../styles/colors';
 
   .gio-smart-link {
+    display: inline-block;
     cursor: pointer;
 
     &.accent {

@@ -27,14 +27,14 @@
     line-height: 1.1;
 
     &.level-1 {
-      font-size: rem(38px);
-      padding: rem(4px) 0;
+      font-size: rem(32px);
+      padding-bottom: rem(8px);
       margin-top: rem(32px);
       border-bottom: solid rem(3px) $focus-light;
     }
 
     &.level-2 {
-      margin-top: rem(32px);
+      margin-top: rem(28px);
       font-size: rem(28px); // rem(32px);
     }
 
