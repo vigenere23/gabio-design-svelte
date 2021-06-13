@@ -51,6 +51,7 @@
 </script>
 
 <style lang="scss">
+  @use "sass:math";
   @import '../../styles/colors';
   @import '../../styles/sizes';
   @import '../../styles/transitions';
@@ -93,7 +94,7 @@
 
     &__image-wrapper {
       width: 100%;
-      padding-bottom: 100% / 16 * 10;
+      padding-bottom: math.div(100%, 16) * 10;
       background-color: lighten($background-light, 2%);
       border-radius: $border-radius-small;
       overflow: hidden;
