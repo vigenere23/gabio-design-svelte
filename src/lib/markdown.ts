@@ -2,7 +2,7 @@ import type {
   MarkdownParser,
   MarkdownParserOutput
 } from '@gabio/markdown-transpiler'
-import marked, { Renderer } from 'marked'
+import { Renderer, marked } from 'marked'
 
 class GioSvelteMarkdownRenderer extends Renderer {
   private components: Set<string> = new Set()
